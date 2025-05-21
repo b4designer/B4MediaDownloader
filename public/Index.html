@@ -1,1 +1,71 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>B4MediaDownloader</title>
+  <style>
+    body {
+      background: #f9f9f9;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    .result {
+      margin-top: 20px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>B4MediaDownloader</h1>
+  <input type="text" id="videoURL" placeholder="Cole o link do vídeo do YouTube, TikTok, Instagram ou Kwai" />
+  <button onclick="downloadVideo()">Baixar</button>
+
+  <div class="result" id="result"></div>
+
+  <script>
+    function downloadVideo() {
+      const url = document.getElementById('videoURL').value;
+      if (!url) {
+        alert('Por favor, cole o link do vídeo.');
+        return;
+      }
+      const downloadLink = `/download?url=${encodeURIComponent(url)}`;
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = `
+        <p>Seu vídeo está pronto:</p>
+        <a href="${downloadLink}" target="_blank">Clique para baixar</a>
+      `;
+    }
+  </script>
+</body>
+</html>
