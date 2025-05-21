@@ -1,15 +1,15 @@
 {
   "name": "b4mediadownloader",
   "version": "1.0.0",
-  "description": "Site de download de vídeos",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "express": "^4.19.2",
-    "ytdl-core": "^5.2.1",
-    "axios": "^1.5.0",
-    "cors": "^2.8.5"
+    "next": "13.4.7",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "axios": "^1.4.0"
   }
 }
