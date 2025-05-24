@@ -1,5 +1,12 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+  "version": 2,
+  "builds": [
+    { "src": "api/*.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/youtube", "dest": "/api/youtube.js" },
+    { "src": "/tiktok", "dest": "/api/tiktok.js" },
+    { "src": "/instagram", "dest": "/api/instagram.js" },
+    { "src": "/kwai", "dest": "/api/kwai.js" }
   ]
 }
